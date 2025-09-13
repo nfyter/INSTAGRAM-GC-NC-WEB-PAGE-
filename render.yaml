@@ -2,8 +2,5 @@ services:
   - type: web
     name: instagram-gc-nc-web-page
     env: python
-    plan: free
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python app.py"
-    pythonVersion: 3.11.9
-    
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
